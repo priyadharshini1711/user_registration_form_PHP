@@ -12,7 +12,7 @@ if (!$conn) {
   die("Connection failed: " . mysqli_connect_error());
 }
 else{
-
+ if (isset($_POST["username"])){
  $uname = $_POST["username"];
  $password = $_POST["password"];
  $confirm_password = $_POST["confirm_password"];
@@ -57,6 +57,7 @@ if (mysqli_num_rows($result) > 0) {
         array_push($errorMessage, mysqli_error($conn));
     }
   }
+}
 }
 
 ?>
